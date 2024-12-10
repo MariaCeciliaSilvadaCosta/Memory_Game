@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <link rel="shortcut icon" href="{% static 'images/doll squid game.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+
+    <script defer src="{% static 'js/jogoMemoria.js' %}"></script>
+
+    <title>Jogo da Memória</title>
+</head>
+<body>
+    <main>
+    <header>
+    <span>Jogador: <span class="nomeJogador"></span></span>
+    <span>Tentativas: <span class="tentativas">0</span></span>
+    <span>Tempo: <span class="timer">00</span><span id="seg">s</span></span>
+    </header>
+    <div class="grid"></div>
+    <div class="game-over hidden">
+        <h1>Game Over</h1>
+        <button class="try-again">Tentar Novamente</button>
+        <button class="ver-ranking" onclick="window.location.href='{% url 'ranking' %}'">Ver Ranking</button>
+    </div>
+    <div class="footer-container">
+        <div class="footer-right">
+            <p>Disciplina: Programação para Internet</p>
+            <p>Professor: Marcelo Figueiredo Barbosa Júnior</p>
+            <p>IFRN - Campus Santa Cruz/RN</p>
+        </div>
+        <div class="footer-left">
+            <p>Componentes do Grupo:</p>
+            <p>Maria Cecilia Silva</p>
+            <p>Maria Clara Silva</p>
+            <p>Nicássia</p>
+    </div>
+</div> 
+<p><strong>Todos os direitos reservados &copy;</strong></p>
+</main>
+<audio id="audio" loop>
+    <source src="{% static 'audio/Squid Game OST - Pink Soldiers (Extended Ver.).mp3' %}" type="audio/mp3">
+</audio>
+
+<script>
+    document.addEventListener('click', function() {
+        document.getElementById('audio').play();
+    });
+</script>
+</body>
+</html>

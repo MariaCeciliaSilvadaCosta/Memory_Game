@@ -1,0 +1,170 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(../images/1184526.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+}
+header span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+}
+.nomeJogador {
+    color: #fff;
+}
+.tentativas {
+    color: #fff;
+}
+.timer {
+    color: #fff;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+   
+}
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ccc;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #d61212;
+    border-radius: 5px;
+    transition: all 400ms ease-in;
+    
+}
+.front {
+    transform: rotateY(180deg);
+    transition: all 500ms ease-in;
+}
+.back {
+  background-image: url('../images/Squid-back.jpeg');
+  backface-visibility: hidden;
+}
+.cartaRevelada {
+    transform: rotateY(180deg);
+}
+.acertado {
+  filter: saturate(0);
+  opacity: 0.5;
+}
+.game-over {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #cc0000;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 999;
+        transition-duration: all 1s ease-in-out;
+       
+}
+.game-over.hidden {
+    display: none;
+}
+.try-again {
+    margin-top: 1%; 
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.726);
+    color: #cc0000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.try-again:hover {
+    background-color: #000000;
+    color: #cc0000;
+}
+.ver-ranking {
+    margin-top: 1%; 
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.726);
+    color: #cc0000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.ver-ranking:hover {
+    background-color: #000000;
+    color: #cc0000;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6%; 
+    width: 100%;
+    background-color: #00694c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.footer-right {
+    text-align: center;
+}
+
+.footer-left {
+    text-align: center;
+}
+.footer-container p {
+    margin: 5px 0;
+}
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr); 
+      
+    }
+}

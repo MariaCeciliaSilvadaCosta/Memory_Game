@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@700&family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: GameOfSquids;
+    src: url('../font/GameOfSquids.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+}
+.login_input {
+    font-family: 'Press Start 2P', Cursive;
+}
+.login_button {
+    font-family: 'Press Start 2P', Cursive;
+}
+header span {
+    font-family: GameOfSquids;
+    color: red;
+}
+h1 {
+    font-family: GameOfSquids;
+    font-size: 4em;
+}
+.try-again {
+    font-family: GameOfSquids;
+}
+.footer-container {
+    font-family: 'Press Start 2P';
+    font-size: 0.7em;
+}

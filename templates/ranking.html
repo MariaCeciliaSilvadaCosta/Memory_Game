@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <link rel="shortcut icon" href="{% static 'images/doll squid game.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/ranking.css' %}">
+    <title>Ranking - Jogo da Memória</title>
+
+    <script defer src="{% static 'js/jogoMemoria.js' %}"></script>
+</head>
+<body>
+    <main>
+        <h1>Ranking</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Jogador</th>
+                    <th>Tentativas</th>
+                    <th>Tempo (s)</th>
+                    <th>Data/Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if partidas %}
+                {% for partida in partidas %}
+                <tr class="{% if forloop.counter == 1 %}gold{% elif forloop.counter == 2 %}silver{% elif forloop.counter == 3 %}bronze{% endif %}">
+                    <td> <span class="trophy"></span> {{ forloop.counter }}</td>
+                    <td>{{ partida.jogador }}</td>
+                    <td>{{ partida.tentativas }}</td>
+                    <td>{{ partida.tempo }}</td>
+                    <td>{{ partida.data_hora|date:"d/m/Y H:i" }}</td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+        <button onclick="window.location.href='{% url 'login' %}'">Voltar ao Início</button>
+        <div class="footer-container">
+            <div class="footer-right">
+                <p>Disciplina: Programação para Internet</p>
+                <p>Professor: Marcelo Figueiredo Barbosa Júnior</p>
+                <p>IFRN - Campus Santa Cruz/RN</p>
+            </div>
+            <div class="footer-left">
+                <p>Componentes do Grupo:</p>
+                <p>Maria Cecilia Silva</p>
+                <p>Maria Clara Silva</p>
+                <p>Nicássia</p>
+        </div>
+    </div> 
+    <p><strong>Todos os direitos reservados &copy;</strong></p>
+    </main>
+</body>
+</html>
